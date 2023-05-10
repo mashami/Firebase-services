@@ -13,9 +13,9 @@ interface Product {
 export const getAllProductsByuser = async (userId: string) => {
 
    
-  const q = await query(collection(db, "Products"), where("createdBy", "==", "2"));
+  // const q = await query(collection(db, "Products"), where("createdBy", "==", "2"));
     // const q = query(collection(db, "Products"),  where("createdBy", "==", "2"),limit(2));
-
+    const q = query(collection(db, "Products"), where("createdBy", "==", '2'),where("availability", "==", false));
 
 
   const querySnapshot = await getDocs(q);
