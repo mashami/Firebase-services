@@ -10,18 +10,23 @@ interface Product {
 }
 
 // Get a single product and its images
-export const getProduct = async (productId: string) => {
-  const docRef = doc(db, "Products", productId);
+export const getProduct = async (id: string) => {
+
+const idIm='asl2kEKNpByPr3ZOpJWh'
+
+
+  const docRef = doc(db, "Products", idIm);
+  
   const docSnap = await getDoc(docRef);
 
   if (!docSnap.exists()) {
-    console.log(`Product ${productId} does not exist.`);
+    console.log(`Product ${id} does not exist.`);
     return null;
   }
 
   const productData = docSnap.data();
 
-  const imagesRef = ref(storage, `images/${productId}`);
+  const imagesRef = ref(storage, `images/${idIm}`);
   const { items } = await listAll(imagesRef);
 
   const productImages: string[] = [];

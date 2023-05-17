@@ -18,10 +18,10 @@ const updateProduct = async (id: string, updatedData: object) => {
     const productRef = doc(db, "Products", id);
   
     // Listen for changes in the product document
+    //onSnapshot what is does 
     const unsubscribe = onSnapshot(productRef, (doc) => {
       console.log("Product data changed:", doc.data());
     });
-  
     // Update the product document with the new data
     const propertySnap = await getDoc(productRef);
     if (!propertySnap.exists()) {

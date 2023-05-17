@@ -113,6 +113,7 @@ const AddProductFormWithImage = () => {
             }
             return { ...prev, [name]: newValue };
         });
+    
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
         if (files) {
@@ -158,7 +159,7 @@ const AddProductFormWithImage = () => {
                         <FormLabel>Province</FormLabel>
                         <Input
                             type="text"
-                            name="province"
+                            name="address.province"
                             value={formInput.address.province}
                             onChange={handleChange}
                             bgColor="black"
@@ -168,7 +169,7 @@ const AddProductFormWithImage = () => {
                         <FormLabel>District</FormLabel>
                         <Input
                             type="text"
-                            name="district"
+                            name="address.district"
                             value={formInput.address.district}
                             onChange={handleChange}
                             bgColor="black"
@@ -178,7 +179,7 @@ const AddProductFormWithImage = () => {
                         <FormLabel>Email</FormLabel>
                         <Input
                             type="email"
-                            name="email"
+                            name="contacts.email"
                             value={formInput.contacts.email}
                             onChange={handleChange}
                             bgColor="black"
@@ -188,7 +189,7 @@ const AddProductFormWithImage = () => {
                         <FormLabel>Phone Number</FormLabel>
                         <Input
                             type="tel"
-                            name="phoneNumber"
+                            name="contacts.phoneNumber"
                             value={formInput.contacts.phoneNumber}
                             onChange={handleChange}
                             bgColor="black"

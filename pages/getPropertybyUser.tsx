@@ -12,10 +12,7 @@ interface Product {
 // Get all products and their images by one User
 export const getAllProductsByuser = async (userId: string) => {
 
-   
-  // const q = await query(collection(db, "Products"), where("createdBy", "==", "2"));
-    // const q = query(collection(db, "Products"),  where("createdBy", "==", "2"),limit(2));
-    const q = query(collection(db, "Products"), where("createdBy", "==", '2'),where("availability", "==", false));
+    const q = query(collection(db, "Products"), where("createdBy", "==",'2' ));
 
 
   const querySnapshot = await getDocs(q);

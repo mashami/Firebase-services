@@ -106,11 +106,12 @@ const UploadImageToStorage = () => {
               </List.Item>
             ))}
 
-            <div className="text-right mt-3">
+            <div className="text-right mt-3 ">
               <Button
           type="primary"
           disabled={imageFiles.length === 0 || isUploading}
           onClick={handleUploadFiles}
+          className='bg-black'
         >
           Upload
         </Button>
